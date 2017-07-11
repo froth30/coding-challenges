@@ -11,8 +11,22 @@ class treeBottomTest {
     
     var tree: String = _
     
-    def testAgainst(output: Array[Int]): Unit = {
-        assert(treeBottom(tree) sameElements output)
+    def testAgainst(expectedOutput: Array[Int]): Unit = {
+        val output = treeBottom(tree)
+        
+        def stringFrom(arr: Array[Int]): String = {
+            var str = "["
+            arr.foreach(str += _ + ", ")
+            str.dropRight(2) + "]"
+        }
+        
+        println()  // buffer between console output and following test results
+        println("Input:              tree: \"" + tree + "\"")
+        println("Output:             " + stringFrom(output))
+        println("Expected Output:    " + stringFrom(expectedOutput))
+        println("Console Output:     See above")
+        
+        assert(output sameElements expectedOutput)
     }
     
     @Test
