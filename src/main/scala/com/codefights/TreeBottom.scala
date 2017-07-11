@@ -3,7 +3,7 @@ package com.codefights
 /**
   * Created by froth30 on 7/8/2017.
   */
-object treeBottom {
+object TreeBottom {
     
     def treeBottom(tree: String): Array[Int] = {
         // Simplify tree expression
