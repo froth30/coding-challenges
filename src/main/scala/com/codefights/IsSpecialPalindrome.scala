@@ -6,10 +6,10 @@ package com.codefights
 object IsSpecialPalindrome {
     
     def isSpecialPalindrome(n: Int) = {
-        val s = n.toBinaryString
+        val s = n toBinaryString
         
-        s == s.reverse &&
-        s.count(_ == '0') == 1 &&
+        s == s.reverse &
+        s.count(_ == '0') == 1 &
         s.contains('1')
     }
     
