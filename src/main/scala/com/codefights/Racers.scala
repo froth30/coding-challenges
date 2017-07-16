@@ -5,41 +5,17 @@ package com.codefights
   */
 object Racers {
     
-    def racers(track: Int, accel: Array[Int], spd: Array[Int]): Array[Int] = {
-        spd.indices.zip(accel zip spd)
-                .sortBy(p => timeToReachDistance(track, p._2._1, p._2._2))
-                .map(_._1).toArray
-    }
+    def racers(d: Int, a: Array[Int], v: Array[Int]) = {
+        val r = a.indices
+                .map(i => (i, a(i), v(i), 1d * v(i) / a(i)))
+                .map { case (i, a, v, t) =>
+                    val x = a * t * t / 2
+                    (i, if (x > d) math.sqrt(2d * d / a) else t + 1d * (d - x) / v)
+                }
+                .sortBy(_._2)
+                .map(_._1)
     
-    def timeToReachDistance(dist: Double, accel: Double, spd: Double): Double = {
-        val distLeft = dist - zeroToTopSpeedDistance(accel, spd)
-        if (distLeft > 0) {
-            val timeLeft = distLeft / spd
-            zeroToTopSpeedTime(accel, spd) + timeLeft
-        }
-        else timeToReachDistance(dist, accel)
-    }
-    
-    def timeToReachDistance(dist: Double, accel: Double): Double = {
-        // x = x0 + v0t + 1/2 at^2
-        // x = 1/2 at^2
-        // t^2 = 2x/a
-        // t = sqrt(2x/a)
-        math.sqrt(2 * dist / accel)
-    }
-    
-    def zeroToTopSpeedDistance(accel: Double, spd: Double): Double = {
-        // v^2 = v0^2 + 2a(x - x0)
-        // v^2 = 2ax
-        // x = v^2 / 2a
-        math.pow(spd, 2) / (2 * accel)
-    }
-    
-    def zeroToTopSpeedTime(accel: Double, spd: Double): Double = {
-        // v = v0 + at
-        // v = at
-        // t = v/a
-        spd / accel
+        r.indices.map(r.indexOf(_)).toArray
     }
     
 }
