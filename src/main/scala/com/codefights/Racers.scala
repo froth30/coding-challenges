@@ -12,22 +12,22 @@ object Racers {
     }
     
     def timeToReachDistance(dist: Double, accel: Double, spd: Double): Double = {
-        val distLeft = dist - distanceToReachTopSpeed(accel, spd)
+        val distLeft = dist - zeroToTopSpeedDistance(accel, spd)
         if (distLeft > 0) {
             val timeLeft = distLeft / spd
-            timeToReachTopSpeed(accel, spd) + timeLeft
+            zeroToTopSpeedTime(accel, spd) + timeLeft
         }
         else timeToReachDistance(dist, accel)
     }
     
-    def distanceToReachTopSpeed(accel: Double, spd: Double): Double = {
+    def zeroToTopSpeedDistance(accel: Double, spd: Double): Double = {
         // v^2 = v0^2 + 2a(x - x0)
         // v^2 = 2ax
         // x = v^2 / 2a
         math.pow(spd, 2) / (2 * accel)
     }
     
-    def timeToReachTopSpeed(accel: Double, spd: Double): Double = {
+    def zeroToTopSpeedTime(accel: Double, spd: Double): Double = {
         // v = v0 + at
         // v = at
         // t = v/a
