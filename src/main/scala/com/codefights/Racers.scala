@@ -20,6 +20,14 @@ object Racers {
         else timeToReachDistance(dist, accel)
     }
     
+    def timeToReachDistance(dist: Double, accel: Double): Double = {
+        // x = x0 + v0t + 1/2 at^2
+        // x = 1/2 at^2
+        // t^2 = 2x/a
+        // t = sqrt(2x/a)
+        math.sqrt(2 * dist / accel)
+    }
+    
     def zeroToTopSpeedDistance(accel: Double, spd: Double): Double = {
         // v^2 = v0^2 + 2a(x - x0)
         // v^2 = 2ax
@@ -32,14 +40,6 @@ object Racers {
         // v = at
         // t = v/a
         spd / accel
-    }
-    
-    def timeToReachDistance(dist: Double, accel: Double): Double = {
-        // x = x0 + v0t + 1/2 at^2
-        // x = 1/2 at^2
-        // t^2 = 2x/a
-        // t = sqrt(2x/a)
-        math.sqrt(2 * dist / accel)
     }
     
 }
