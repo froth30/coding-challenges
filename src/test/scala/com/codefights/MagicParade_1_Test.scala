@@ -14,31 +14,31 @@ class MagicParade_1_Test {
     import MagicParade_1._
     
     @Test
-    def test1(): Unit = assert(magicParade_1(1, 0, 2) == false)
+    def test01(): Unit = assert(magicParade_1(1, 0, 2) == false)
     
     @Test
-    def test2(): Unit = assert(magicParade_1(1, 0, 1) == true)
+    def test02(): Unit = assert(magicParade_1(1, 0, 1) == true)
     
     @Test
-    def test3(): Unit = assert(magicParade_1(0, 4, 2) == true)
+    def test03(): Unit = assert(magicParade_1(0, 4, 2) == true)
     
     @Test
-    def test4(): Unit = assert(magicParade_1(0, 5, 1) == false)
+    def test04(): Unit = assert(magicParade_1(0, 5, 1) == false)
     
     @Test
-    def test5(): Unit = assert(magicParade_1(1, 5, 1) == true)
+    def test05(): Unit = assert(magicParade_1(1, 5, 1) == true)
     
     @Test
-    def test6(): Unit = assert(magicParade_1(0, 0, 0) == false)
+    def test06(): Unit = assert(magicParade_1(0, 0, 0) == false)
     
     @Test
-    def test7(): Unit = assert(magicParade_1(5, 25, 4) == true)
+    def test07(): Unit = assert(magicParade_1(5, 25, 4) == true)
     
     @Test
-    def test8(): Unit = assert(magicParade_1(20, 20, 22) == false)
+    def test08(): Unit = assert(magicParade_1(20, 20, 22) == false)
     
     @Test
-    def test9(): Unit = assert(magicParade_1(100000000, 100000000, 100000000) == true)
+    def test09(): Unit = assert(magicParade_1(100000000, 100000000, 100000000) == true)
     
     @Test
     def test10(): Unit = assert(magicParade_1(5, 38, 10) == false)
