@@ -8,10 +8,8 @@ package com.codefights
   */
 object RaiseIt {
     
-    def raiseIt(arg1: Array[Int]): Int = {
-        arg1    .map(n => math.pow(n / 10, n % 10))
-                .sum
-                .toInt
-    }
+    def raiseIt(a: Array[Int]) = a
+        .map(n => math pow(n / 10, n % 10))
+        .sum
     
 }
