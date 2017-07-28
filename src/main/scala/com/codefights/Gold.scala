@@ -8,12 +8,8 @@ package com.codefights
   */
 object Gold {
     
-    def gold(n: Int) =
-        2 to n/2 map(k =>
-            if (p(k) & p(n-k)) 1
-            else 0
-        ) sum
+    def gold(n: Int) = 2 to n/2 count(k => p(k) & p(n-k))
     
-    def p(n: Int) = ! (2 to n-2 exists (n % _ == 0))
+    def p(n: Int) = ! (2 to n/2 exists (n % _ == 0))
     
 }
