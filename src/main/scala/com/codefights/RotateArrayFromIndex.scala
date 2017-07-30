@@ -8,23 +8,20 @@ package com.codefights
   */
 object RotateArrayFromIndex {
     
-    def rotateArrayFromIndex(values: Array[Int], start: Int, end: Int): Array[Int] = {
-        var trueStart = math.min(start, values.length - 1)
-        var trueEnd   = math.min(end,   values.length - 1)
-        var interval  = values
+    def rotateArrayFromIndex(v: Array[Int], s: Int, e: Int) = {
+        var S = math.min(s, v.length - 1)
+        var E = math.min(e, v.length - 1)
+        var I = v
         
-        if (end < start) {
-            val temp = trueStart
-            trueStart = trueEnd
-            trueEnd = temp
-            interval = values(trueEnd) +: values.slice(trueStart, trueEnd)
-        } else {
-            interval = values.slice(trueStart + 1, trueEnd + 1) :+ values(trueStart)
-        }
+        if (e < s) {
+            val t = S
+            S = E
+            E = t
+            I = v(E) +: v.slice(S, E)
+        } else
+            I = v.slice(S + 1, E + 1) :+ v(S)
         
-        values.take(trueStart) ++
-            interval ++
-            values.slice(trueEnd + 1, values.length)
+        v.take(S) ++ I ++ v.slice(E + 1, v.length)
     }
     
 }
