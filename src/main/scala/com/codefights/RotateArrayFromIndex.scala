@@ -9,8 +9,9 @@ package com.codefights
 object RotateArrayFromIndex {
     
     def rotateArrayFromIndex(V: Array[Int], S: Int, E: Int) = {
-        var s = math.min(S, V.length - 1)
-        var e = math.min(E, V.length - 1)
+        val L = V.length
+        var s = math.min(S, L-1)
+        var e = math.min(E, L-1)
         var I = V
         
         if (E < S) {
@@ -19,9 +20,9 @@ object RotateArrayFromIndex {
             e = t
             I = V(e) +: V.slice(s, e)
         } else
-            I = V.slice(s + 1, e + 1) :+ V(s)
+            I = V.slice(s+1, e+1) :+ V(s)
         
-        V.take(s) ++ I ++ V.slice(e + 1, V.length)
+        V.take(s) ++ I ++ V.slice(e+1, L)
     }
     
 }
