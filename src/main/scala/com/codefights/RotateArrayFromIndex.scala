@@ -8,21 +8,14 @@ package com.codefights
   */
 object RotateArrayFromIndex {
     
-    def rotateArrayFromIndex(V: Array[Int], S: Int, E: Int) = {
-        val L = V.length
-        var s = math.min(S, L-1)
-        var e = math.min(E, L-1)
-        var I = V
-        
-        if (E < S) {
-            val t = s
-            s = e
-            e = t
-            I = V(e) +: V.slice(s, e)
-        } else
-            I = V.slice(s+1, e+1) :+ V(s)
-        
-        V.take(s) ++ I ++ V.slice(e+1, L)
-    }
+    def rotateArrayFromIndex(v: Array[Int], s: Int, e: Int): Array[Int] =
+        if (v.length < 2)
+            v
+        else if (e < s)
+            rotateArrayFromIndex(v.reverse, e, s).reverse
+        else
+            v.slice(0, s) ++ (
+                v.slice(s+1, e+1) :+ v(s)) ++
+                v.slice(e+1, v.length)
     
 }
