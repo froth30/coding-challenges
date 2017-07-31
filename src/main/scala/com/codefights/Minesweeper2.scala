@@ -8,7 +8,7 @@ package com.codefights
   */
 object Minesweeper2 {
     
-    def minesweeper2(gameboard: Array[Array[Int]], opening: Array[Array[Boolean]], moves: Array[Array[Int]]): Array[Array[Boolean]] = {
+    def minesweeper2(g: Array[Array[Int]], o: Array[Array[Boolean]], m: Array[Array[Int]]): Array[Array[Boolean]] = {
         ???
     }
     
