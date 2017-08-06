@@ -8,8 +8,9 @@ package com.codefights
   */
 object BuildSum {
     
-    def buildSum(n: Int): Int = {
-        ???
-    }
+    def buildSum(n: Int): Double =
+        if (n > 0)
+            math.pow(n, n) + buildSum(n-1)
+        else 1
     
 }
