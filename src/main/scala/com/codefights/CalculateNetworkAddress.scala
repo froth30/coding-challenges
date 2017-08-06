@@ -15,7 +15,21 @@ object CalculateNetworkAddress {
       * @return The network address of the given CIDR notation.
       */
     def calculateNetworkAddress(cidr: String): String = {
-        ???
+        val components = cidr.split('/')
+        val blocks = components(0).split('.')
+        val bits = blocks.map(_.toInt.toBinaryString.toInt.formatted("%08d")).mkString
+        val mask = components(1).toInt
+        var networkAddress = bits.toArray
+        
+        (1 to mask).foreach(i => networkAddress(i-1) = bits(i-1))
+        (mask to 31).foreach(networkAddress(_) = '0')
+        
+        (0 to 3).foreach(i => {
+            blocks(i) = Integer.parseInt(networkAddress.take(8).mkString, 2).toString
+            networkAddress = networkAddress.drop(8)
+        })
+        
+        blocks.mkString(".")
     }
     
 }
