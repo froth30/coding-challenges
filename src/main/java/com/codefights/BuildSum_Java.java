@@ -10,7 +10,7 @@ public class BuildSum_Java {
     
     public static double buildSum(int n) {
         return n > 0
-                ? Math.pow(n, n--) + buildSum(n)
+                ? Math.pow(n,n) + buildSum(--n)
                 : 1;
     }
     
