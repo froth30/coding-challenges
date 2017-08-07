@@ -8,6 +8,6 @@ package com.codefights
   */
 object BuildSum {
     
-    def buildSum(n: Int) = 0 to n map(i => math.pow(i, i)) sum
+    def buildSum(n: Int) = 0 to n map(i => math pow(i,i)) sum
     
 }
