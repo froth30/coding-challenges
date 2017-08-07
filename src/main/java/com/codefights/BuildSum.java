@@ -9,7 +9,11 @@ package com.codefights;
 class BuildSum {
     
     public static int buildSum(int n) {
-        return -1;
+        int s = 1;
+        for (int i = 1; i <= n; i++) {
+            s += Math.pow(i,i);
+        }
+        return s;
     }
     
 }
