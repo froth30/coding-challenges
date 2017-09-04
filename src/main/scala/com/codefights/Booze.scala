@@ -1,5 +1,11 @@
 package com.codefights
 
+/**
+  * CodeFights Challenge `booze`
+  *
+  * @since Sep 3, 2017
+  * @author froth30
+  */
 object Booze {
     
     /**
