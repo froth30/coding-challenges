@@ -31,7 +31,11 @@ object Booze {
         
          */
         
-        (0.08 + h * d) / i toInt
+        val n = (0.08 + h * d) / i toInt
+        val m = 0.45 / i toInt
+        
+        if (n > m)  m
+        else        n
     }
     
 }
