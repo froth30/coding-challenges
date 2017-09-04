@@ -18,27 +18,11 @@ object Booze {
       */
     def booze(h: Int, d: Double, i: Double) = {
     
-        /*
+        math min(
+            .08 + h * d,
+            .45
+        )
         
-        1)  n * i = a
-            h * d = b
-            a - b = 0.08
-        
-        2)  a = 0.08 + b
-        
-        3)  n * i = 0.08 + h * d
-        
-        4)  n = (0.08 + h * d) / i
-        
-        5)  Prevent death!
-        
-        */
-    
-        val n = (h * d + .08) / i
-        val m =          .45  / i
-    
-        if (n > m) m else n
-        
-    } toInt
+    } / i toInt
     
 }
