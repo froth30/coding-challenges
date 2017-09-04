@@ -11,7 +11,21 @@ object Booze {
       * @return how much the person can drink, such that their BAC will be at most 0.08 when they have to leave for work
       */
     def booze(h: Int, d: Double, i: Double): Int = {
-        ???
+        /*
+        
+        n * i = a
+        h * d = b
+        a - b = 0.08
+        
+        a = 0.08 + b
+        
+        n * i = 0.08 + h * d
+        
+        n = (0.08 + h * d) / i
+        
+         */
+        
+        (0.08 + h * d) / i toInt
     }
     
 }
