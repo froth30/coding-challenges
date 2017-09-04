@@ -16,26 +16,29 @@ object Booze {
       * @param i the amount by which the person's BAC increases per serving of their favorite drink
       * @return how much the person can drink, such that their BAC will be at most 0.08 when they have to leave for work
       */
-    def booze(h: Int, d: Double, i: Double): Int = {
+    def booze(h: Int, d: Double, i: Double) = {
     
         /*
         
-        n * i = a
-        h * d = b
-        a - b = 0.08
+        1)  n * i = a
+            h * d = b
+            a - b = 0.08
         
-        a = 0.08 + b
+        2)  a = 0.08 + b
         
-        n * i = 0.08 + h * d
+        3)  n * i = 0.08 + h * d
         
-        n = (0.08 + h * d) / i
+        4)  n = (0.08 + h * d) / i
         
-         */
+        5)  Prevent death!
+        
+        */
     
         val n = (h * d + .08) / i
         val m =          .45  / i
     
-        { if (n > m) m else n } toInt
-    }
+        if (n > m) m else n
+        
+    } toInt
     
 }
