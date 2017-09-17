@@ -27,15 +27,15 @@ object HasPathWithGivenSum {
     /**
       * Definition for the binary tree class used in CodeFights Interview Practice `hasPathWithGivenSum`.
       *
-      * @param x   The value to be contained in the (root) node of this tree.
+      * @param  x  The value to be contained in the (root) node of this tree.
       * @tparam T  The type associated with this tree (e.g. `Int`).
       */
     class Tree[T](x: T) {
         
-        var value: T = x
+        var value : T = x
         
-        var left: Option[Tree[T]] = None
-        var right: Option[Tree[T]] = None
+        var left  : Option[Tree[T]] = None
+        var right : Option[Tree[T]] = None
         
     }
     
