@@ -17,7 +17,11 @@ object HasPathWithGivenSum {
       *           is equal to `s`, otherwise return `false`.
       */
     def hasPathWithGivenSum(t: Option[Tree[Int]], s: Int): Boolean = {
-        ???
+        if (t.isEmpty) return false
+    
+        val x = s - t.get.value
+        if (x == 0 || hasPathWithGivenSum(t.get.left, x)
+                   || hasPathWithGivenSum(t.get.right, x)) true else false
     }
     
     /**
