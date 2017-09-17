@@ -8,10 +8,8 @@ package com.codefights
   */
 object HasPathWithGivenSum {
     
-    var isAtRoot = true
-    
     /**
-      * Determines whether there is a root-to-leaf path in `t`such that the sum of vertex values equals `s`.
+      * Determines whether there is a root-to-leaf path in `t` such that the sum of vertex values equals `s`.
       *
       * @param t  A binary tree of integers.
       * @param s  The integer sum needed to be achieved along any path.
@@ -19,13 +17,19 @@ object HasPathWithGivenSum {
       *           is equal to `s`, otherwise return `false`.
       */
     def hasPathWithGivenSum(t: Option[Tree[Int]], s: Int): Boolean = {
-        if (t.isEmpty)
-            return isAtRoot && s == 0
-        isAtRoot = false
+        if (t.isEmpty) return s == 0
     
-        val x = s - t.get.value
-        (x == 0 || hasPathWithGivenSum(t.get.left , x)
-                || hasPathWithGivenSum(t.get.right, x))
+        hasPathWithGivenSum(t.get, s)
+    }
+    
+    /** Recursive helper method for `hasPathWithGivenSum(Option[Tree[Int]``], Int)`. */
+    def hasPathWithGivenSum(t: Tree[Int], s: Int): Boolean = {
+        val x = s - t.value
+    
+        if (t.left .isDefined) if (hasPathWithGivenSum(t.left .get, x)) return true
+        if (t.right.isDefined) if (hasPathWithGivenSum(t.right.get, x)) return true
+        
+        t.left.isEmpty && t.right.isEmpty && x == 0
     }
     
     /**
