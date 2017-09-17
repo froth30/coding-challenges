@@ -8,6 +8,9 @@ package com.codefights
   */
 object HasPathWithGivenSum {
     
+    /** Preallocated integer variable for preventing recursive creation of local value. */
+    var x = 0
+    
     /**
       * Determines whether there is a root-to-leaf path in `t` such that the sum of vertex values equals `s`.
       *
@@ -24,10 +27,10 @@ object HasPathWithGivenSum {
     
     /** Recursive helper method for `hasPathWithGivenSum(Option[Tree[Int]``], Int)`. */
     def hasPathWithGivenSum(t: Tree[Int], s: Int): Boolean = {
-        val x = s - t.value
+        x = s - t.value
     
-        if (t.left .isDefined) if (hasPathWithGivenSum(t.left .get, x)) return true
-        if (t.right.isDefined) if (hasPathWithGivenSum(t.right.get, x)) return true
+        if (t.left .isDefined && hasPathWithGivenSum(t.left .get, x)) return true
+        if (t.right.isDefined && hasPathWithGivenSum(t.right.get, x)) return true
         
         t.left.isEmpty && t.right.isEmpty && x == 0
     }
