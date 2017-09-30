@@ -20,10 +20,10 @@ object FibFib {
     {
         val r = math sqrt f
         
-        if (r < a + b)  fibFib(f, b, a + b)
-        else            f == 0 |
-                        f == 1 |
-                        r == a + b
+        if (f > 1)
+            if (r < a + b)  fibFib(f, b, a + b)
+            else            r == a + b
+        else true
     }
     
 }
