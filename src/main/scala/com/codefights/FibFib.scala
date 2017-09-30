@@ -12,10 +12,11 @@ object FibFib {
     /**
       * TODO: ____
       *
-      * @param ff  TODO: ____  <ul><i>Guaranteed constraints:</i> &#9 `0 ≤ ff ≤ 10`^`8`^
-      * @return
+      * @param f  TODO: ____  <ul><i>Guaranteed constraints:</i> &#9 `0 ≤ ff ≤ 10`^`8`^
+      * @return   `true` if the integer is the square of a Fibonacci Number; `false` otherwise.
+      *           TODO: Verify this!
       */
-    def fibFib(ff: Int): Boolean = {
+    def fibFib(f: Int): Boolean = {
         ???
     }
     
