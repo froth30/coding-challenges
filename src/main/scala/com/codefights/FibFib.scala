@@ -16,8 +16,14 @@ object FibFib {
       * @return   `true` if the integer is the square of a Fibonacci Number; `false` otherwise.
       *           TODO: Verify this!
       */
-    def fibFib(f: Int): Boolean = {
-        ???
+    def fibFib(f: Int, a: Int = 0, b: Int = 1): Any =
+    {
+        val r = math sqrt f
+        
+        if (r < a + b)  fibFib(f, b, a + b)
+        else            f == 0 |
+                        f == 1 |
+                        r == a + b
     }
     
 }
