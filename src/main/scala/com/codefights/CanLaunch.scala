@@ -14,13 +14,11 @@ object CanLaunch {
       *
       * @param p  The number of alien ships in the incoming attack squadron
       *           <ul><i>Guaranteed constraints:</i> &#9 `1 ≤ n ≤ 10`^`9`^
-      * @param n  The theoretical number of alien ships along one edge of the incoming attack
-      *           squadron, assuming they are in full <i>i-cragntbany</i> formation
       * @return   `true` if the number of incoming alien ships is a <i>pentagonal number;</i>
       *           `false` otherwise.
       */
-    def canLaunch(p: Int, n: Int = 1): Nothing = {
-        ???
-    }
+    def canLaunch(p: Int) =
+        
+        (math.sqrt(24 * p + 1) + 1) % 6 == 0
     
 }
