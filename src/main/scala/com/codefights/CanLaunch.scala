@@ -18,7 +18,7 @@ object CanLaunch {
       *           `false` otherwise.
       */
     def canLaunch(n: Int) =
-        
-        math.sqrt(24 * n + 1) % 6 == 5
+    
+        (math sqrt 24 * n + 1) % 6 > 4
     
 }
