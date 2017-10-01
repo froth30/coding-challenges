@@ -19,6 +19,6 @@ object CanLaunch {
       */
     def canLaunch(n: Int) =
         
-        (math.sqrt(24 * n + 1) + 1) % 6 == 0
+        math.sqrt(24 * n + 1) % 6 == 5
     
 }
