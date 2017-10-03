@@ -6,7 +6,7 @@ package com.codefights
   * @since Aug 13, 2017
   * @author froth30
   */
-object ChainReaction2 {
+object chainReaction2 {
     
     import math.abs
     

@@ -6,7 +6,7 @@ package com.codefights
   * @since Jul 24, 2017
   * @author froth30
   */
-object Minesweeper1 {
+object minesweeper1 {
     
     def minesweeper1(gameboard: Array[Array[Int]]): Boolean = {
         ???

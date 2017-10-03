@@ -6,7 +6,7 @@ package com.codefights
   * @since  Sep 30, 2017
   * @author froth30
   */
-object CanLaunch {
+object canLaunch {
     
     /**
       * Determines whether it is possible for your friend, Kal, to launch missiles at the squadron

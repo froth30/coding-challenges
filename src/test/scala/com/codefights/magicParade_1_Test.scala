@@ -9,9 +9,9 @@ import org.junit.Test
   * @author froth30
   */
 //noinspection SimplifyBoolean
-class MagicParade_1_Test {
+class magicParade_1_Test {
     
-    import MagicParade_1._
+    import magicParade_1._
     
     @Test(timeout = 20000)
     def test01(): Unit = assert(magicParade_1(1, 0, 2) == false)

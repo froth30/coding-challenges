@@ -6,7 +6,7 @@ package com.codefights
   * @since Jul 20, 2017
   * @author froth30
   */
-object MagicParade_1 {
+object magicParade_1 {
     
     def magicParade_1(water: Int, fire: Int, death: Int): Boolean = {
         isSafeParade("", water, fire, death)

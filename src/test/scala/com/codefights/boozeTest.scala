@@ -8,14 +8,14 @@ import org.junit.Test
   * @since Sep 3, 2017
   * @author froth30
   */
-class BoozeTest {
+class boozeTest {
     
     var hours: Int = _
     var bacDecreasePerHour: Double = _
     var bacIncreasePerDrink: Double = _
     
     def testAgainst(expectedOutput: Int): Unit = {
-        val output = Booze.booze(hours, bacDecreasePerHour, bacIncreasePerDrink)
+        val output = booze.booze(hours, bacDecreasePerHour, bacIncreasePerDrink)
         
         println() // buffer between console output and following test results
         println("Input:              hours: " + hours)

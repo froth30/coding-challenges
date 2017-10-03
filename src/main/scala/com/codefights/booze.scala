@@ -6,7 +6,7 @@ package com.codefights
   * @since Sep 3, 2017
   * @author froth30
   */
-object Booze {
+object booze {
     
     /**
       * Determines the most a person can drink and still be ok to drive to work.

@@ -6,7 +6,7 @@ package com.codefights
   * @since Aug 5, 2017
   * @author froth30
   */
-object CalculateNetworkAddress {
+object calculateNetworkAddress {
     
     /**
       * Calculates the network address of an IP address in CIDR notation.

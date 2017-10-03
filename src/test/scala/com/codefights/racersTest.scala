@@ -5,9 +5,9 @@ import org.junit.Test
 /**
   * Created by froth30 on 7/12/2017.
   */
-class RacersTest {
+class racersTest {
     
-    import Racers._
+    import racers._
     
     var track: Int = _
     var accel: Array[Int] = _

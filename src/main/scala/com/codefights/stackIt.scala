@@ -6,7 +6,7 @@ package com.codefights
   * @since  Sep 23, 2017
   * @author froth30
   */
-object StackIt {
+object stackIt {
     
     /**
       * Determines whether it is possible to stack a given number of packs of XYZ soda in a perfect

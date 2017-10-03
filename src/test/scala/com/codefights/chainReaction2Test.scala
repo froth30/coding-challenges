@@ -8,9 +8,9 @@ import org.junit.Test
   * @since Aug 13, 2017
   * @author froth30
   */
-class ChainReaction2Test {
+class chainReaction2Test {
     
-    import ChainReaction2._
+    import chainReaction2._
     
     var n, m = 0
     var moves: Array[Array[Int]] = _

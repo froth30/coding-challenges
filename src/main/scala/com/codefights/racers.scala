@@ -3,7 +3,7 @@ package com.codefights
 /**
   * Created by froth30 on 7/11/2017.
   */
-object Racers {
+object racers {
     
     def racers(d: Int, a: Array[Int], v: Array[Int]) = {
         val r = a.indices

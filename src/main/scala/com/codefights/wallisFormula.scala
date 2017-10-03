@@ -6,7 +6,7 @@ package com.codefights
   * @since  Sep 16, 2017
   * @author froth30
   */
-object WallisFormula {
+object wallisFormula {
     
     /**
       * Calculates the value of the integrated function `sin` or `cos` using Wallis' formula.

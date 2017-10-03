@@ -6,7 +6,7 @@ package com.codefights
   * @since Jul 30, 2017
   * @author froth30
   */
-object RotateArrayFromIndex {
+object rotateArrayFromIndex {
     
     def rotateArrayFromIndex(v: Array[Int], s: Int, e: Int): Array[Int] =
         if (v.length < 2)

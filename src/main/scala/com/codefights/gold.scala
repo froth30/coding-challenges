@@ -6,7 +6,7 @@ package com.codefights
   * @since Jul 26, 2017
   * @author froth30
   */
-object Gold {
+object gold {
     
     def gold(n: Int) =
         2 to n/2 count(k => p(k) & p(n-k))

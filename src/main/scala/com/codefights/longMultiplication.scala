@@ -6,7 +6,7 @@ package com.codefights
   * @since  Sep 27, 2017
   * @author froth30
   */
-object LongMultiplication {
+object longMultiplication {
     
     type S = String
     type I = Int

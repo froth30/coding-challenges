@@ -3,7 +3,7 @@ package com.codefights
 /**
   * Created by froth30 on 7/16/2017.
   */
-object IsSpecialPalindrome {
+object isSpecialPalindrome {
     
     def isSpecialPalindrome(n: Int) = {
         val s = n toBinaryString

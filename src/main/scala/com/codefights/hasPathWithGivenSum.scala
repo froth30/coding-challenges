@@ -6,7 +6,7 @@ package com.codefights
   * @since Sep 16, 2017
   * @author froth30
   */
-object HasPathWithGivenSum {
+object hasPathWithGivenSum {
     
     /** Preallocated integer variable for preventing recursive creation of local value. */
     var x = 0

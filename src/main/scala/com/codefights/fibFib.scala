@@ -6,7 +6,7 @@ package com.codefights
   * @since  Sep 29, 2017
   * @author froth30
   */
-object FibFib {
+object fibFib {
     
     //TODO: See below...
     /**

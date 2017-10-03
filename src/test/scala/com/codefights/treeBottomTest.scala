@@ -5,9 +5,9 @@ import org.junit.Test
 /**
   * Created by froth30 on 7/8/2017.
   */
-class TreeBottomTest {
+class treeBottomTest {
     
-    import TreeBottom._
+    import treeBottom._
     
     var tree: String = _
     
