@@ -7,13 +7,27 @@ package com.codefights
   */
 object concatenationProcess {
     
+    type A = Array[String]
+    
     /** Description
       *
-      * @param i  Definition
+      * @param a  Definition
       * @return   Something
       */
-    def concatenationProcess(i: Array[String]): String = {
-        ???
+    def concatenationProcess(a: A) = {
+        var z = Array("")
+        while (a.count(_ != "") > 1) {
+            z :+= p(a)
+            z :+= p(a)
+        }
+        a ++: z mkString
+    }
+    
+    def p(a: A) = {
+        val s = a filter(_ != "") minBy(_ length)
+        a(a indexOf s) = ""
+        
+        s
     }
     
 }
