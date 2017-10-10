@@ -7,6 +7,8 @@ package com.codefights
   */
 object truncateString {
     
+    type S = String
+    
     /** For a given string, finds the result of applying the following operation to it:
       * <ul>
       *     <li>if the leftmost digit of the string is divisible by `3`, remove it from the string;
@@ -21,8 +23,14 @@ object truncateString {
       *           is applied sequentially until `s` is either (1) empty or (2) none of the three
       *           given conditions are met.
       */
-    def truncateString(s: String): String = {
-        ???
+    def truncateString = t(_: S)
+    
+    def t(s: S): S = s match {
+        case ""                            => s
+        case s if  s(0)           % 3 < 1  => t(s drop 1)
+        case s if         s.last  % 3 < 1  => t(s dropRight 1)
+        case s if (s(0) + s.last) % 3 < 1  => t(s drop 1 dropRight 1)
+        case _                             => s
     }
     
 }
