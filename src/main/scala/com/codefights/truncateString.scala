@@ -9,6 +9,9 @@ object truncateString {
     
     type S = String
     
+    /** @see [[t]] */
+    def truncateString = t(_: S)
+    
     /** For a given string, finds the result of applying the following operation to it:
       * <ul>
       *     <li>if the leftmost digit of the string is divisible by `3`, remove it from the string;
@@ -23,8 +26,6 @@ object truncateString {
       *           is applied sequentially until `s` is either (1) empty or (2) none of the three
       *           given conditions are met.
       */
-    def truncateString = t(_: S)
-    
     def t(s: S): S = s match {
         case ""                            => s
         case s if  s(0)           % 3 < 1  => t(s drop 1)
