@@ -1,5 +1,8 @@
 package com.codefights
 
+import com.Strings
+import com.Strings.ImplicitConversions._
+
 /** CodeFights Challenge `magicArrows`
   *
   * @author froth30
@@ -20,23 +23,23 @@ object magicArrows {
       * @return   The average number of ''iArrows'' required to kill the
       *           villain.
       */
-    def magicArrows(v: Int, m: Array[Int]): Double =
-        if (v < 1)           1
-        else if (m isEmpty)  v
-        else {
-            val n = m size
-            
-            {
-                magicArrows(v-1, m) + {
-                    0 to n-1 map(i => {
-                        m(i) -= 1
-                        val r = magicArrows(v, m filter(_ > 0))
-                        m(i) += 1
-                        
-                        r
-                    })
-                }.sum
-            } / (1 + n)
-        }
+    def magicArrows(v: Int, m: Array[Int]): Double = {
+        if (v < 1 | m.isEmpty)
+            return v
+        
+        val n = m size
+        
+        {
+            1 + magicArrows(v-1, m) + {
+                0 to n-1 map(i => 1 + {
+                    val c = m clone
+                    
+                    c(i) -= 1
+                    
+                    magicArrows(v, c filter(_ > 0))
+                })
+            }.sum
+        } / (1 + n)
+    }
     
 }
