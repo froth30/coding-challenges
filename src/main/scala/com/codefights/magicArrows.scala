@@ -23,23 +23,26 @@ object magicArrows {
       * @return   The average number of ''iArrows'' required to kill the
       *           villain.
       */
-    def magicArrows(v: Int, m: Array[Int]): Double = {
-        if (v < 1 | m.isEmpty)
-            return v
-        
-        val n = m size
-        
-        {
-            1 + magicArrows(v-1, m) + {
-                0 to n-1 map(i => 1 + {
-                    val c = m clone
-                    
-                    c(i) -= 1
-                    
-                    magicArrows(v, c filter(_ > 0))
-                })
-            }.sum
-        } / (1 + n)
+    def magicArrows(v: Int, m: Array[Int]): Double = (v, m) match {
+        case (0, _) | (_, Array())  => v
+        case (1, Array(1))          => 1.5
+        case (2, Array(1))          => 2.75
+        case (1, Array(1, 1))       => 2
+        case (2, Array(1, 1))       => 3.5
+        case  _                     => {
+            val n = m size
+            
+            {
+                1 + magicArrows(v-1, m) + {
+                    0 to n-1 map(i => 1 + {
+                        val c = m clone
+                        
+                        c(i) -= 1
+                        magicArrows(v, c filter(_ > 0))
+                    })
+                }.sum
+            } / (1 + n)
+        }
     }
     
 }
