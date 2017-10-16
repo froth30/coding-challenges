@@ -1,5 +1,7 @@
 package com.codefights
 
+import com.Strings
+import com.Strings.ImplicitConversions._
 import org.junit.Test
 
 /** Test class for CodeFights Challenge `magicArrows`
@@ -18,17 +20,9 @@ class magicArrows_Test {
     def testAgainst(expectedOutput: Double): Unit = {
         val output = magicArrows(villain, minions)
         
-        def stringFrom(a: Array[Int]): String = {
-            val str =
-                if (a isEmpty)  ""
-                else  a.map(_ + ", ").mkString.dropRight(2)
-            
-            "[" + str + "]"
-        }
-        
         println()
         println("Input:              villain: " + villain)
-        println("                    minions: " + stringFrom(minions))
+        println("                    minions: " + Strings.fromArray(minions))
         println("Output:             " + output)
         println("Expected Output:    " + expectedOutput)
         
