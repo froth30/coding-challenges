@@ -11,7 +11,13 @@ object Strings {
         "[" + arr.map(fromArray(_) + ",\n" + continuationIndent + " ")
             .mkString.dropRight(continuationIndent.length + 3) + "]"
     
+    
     object ImplicitConversions {
+        
+        implicit def str2arr(str: String): Array[Int] = {
+            if (str startsWith "[") str drop 1 dropRight 1 else str
+        }.split(",").map(_.trim.toInt)
+        
         implicit def toAnyArray(a: Array[Boolean ]): Array[Any] = a map(b => b)
         implicit def toAnyArray(a: Array[Short   ]): Array[Any] = a map(b => b)
         implicit def toAnyArray(a: Array[Int     ]): Array[Any] = a map(b => b)
