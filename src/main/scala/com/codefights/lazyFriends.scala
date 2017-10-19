@@ -20,7 +20,7 @@ object lazyFriends {
       *           distance `m` of each respective person in `h`.
       */
     def lazyFriends(h: Array[Int], m: Int): Array[Int] = {
-        ???
+        h map(p => h.map(_ - p) count(_ <= m))
     }
     
 }
