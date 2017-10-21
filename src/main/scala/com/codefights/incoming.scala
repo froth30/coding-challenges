@@ -7,7 +7,10 @@ package com.codefights
   */
 object incoming {
     
-    def incoming(terrain: Array[Array[Double]], vX: Double, vY: Double, h: Double): Array[Double] = {
+    type A[T] = Array[T]
+    type D    = Double
+    
+    def incoming(terrain: A[A[D]], vX: D, vY: D, h: D): A[D] = {
         ???
     }
     
