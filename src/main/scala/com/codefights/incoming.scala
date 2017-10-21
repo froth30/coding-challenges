@@ -10,7 +10,7 @@ object incoming {
     type A[T] = Array[T]
     type D    = Double
     
-    def incoming(terrain: A[A[D]], vX: D, vY: D, h: D): A[D] = {
+    def incoming(t: A[A[D]], x: D, y: D, h: D): A[D] = {
         ???
     }
     
