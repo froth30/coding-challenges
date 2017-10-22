@@ -16,10 +16,15 @@ object checkEqualFrequency {
       * @return   `true` if each unique integer is contained the same number
       *           of times; `false` otherwise.
       */
-    def checkEqualFrequency(a: Array[Int]) = {
-        val n = a map(x => a count(_ == x))
-        
-        n forall(_ == n(0))
+    def checkEqualFrequency(a: Array[Int]) = f(a sorted)
+    
+    def f(a: Array[Int], n: Int = 0): Boolean = {
+        a.isEmpty || {
+            val p = a prefixLength(_ == a(0))
+            
+            if (n < 1)  f(a, p)
+            else        p == n && f(a drop p, n)
+        }
     }
     
 }
