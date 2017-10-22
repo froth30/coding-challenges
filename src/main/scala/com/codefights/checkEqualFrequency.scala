@@ -11,6 +11,8 @@ object checkEqualFrequency {
       * number of times as every other integer.
       *
       * @param a  An array of integers
+      *           <ul>''Guaranteed constraints:''&#9`1 ≤ a.length ≤ 5 ·10`^`4`^
+      *                                   <br>&#9&#9`1 ≤ a[i] ≤ 4 · 10`^`8`^
       * @return   `true` if each unique integer is contained the same number
       *           of times; `false` otherwise.
       */
