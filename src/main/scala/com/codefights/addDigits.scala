@@ -7,8 +7,21 @@ package com.codefights
   */
 object addDigits {
     
-    def addDigits(a: Int, b: Int, n: Int): String = {
-        ???
+    def addDigits(a: BigInt, b: Int, n: Int) = {
+        var A = a
+        
+        1 to n foreach (_ => {
+            var c = true
+            9 to 0 by -1 foreach (d => if (c) {
+                A = A * 10 + d
+                if (A % b > 0)
+                    A /= 10
+                else
+                    c = !c
+            })
+        })
+        
+        A + ""
     }
     
 }
