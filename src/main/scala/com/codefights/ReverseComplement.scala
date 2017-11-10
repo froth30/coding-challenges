@@ -12,12 +12,12 @@ object ReverseComplement {
       * @param s  A strand of DNA
       * @return   The complement of strand `s`, in reverse order.
       */
-    def ReverseComplement(s: String) = s.reverseMap {
-        case  65 |  97  => "T"  // A
-        case  67 |  99  => "G"  // C
-        case  71 | 103  => "C"  // G
-        case  84 | 116  => "A"  // T
-        case     _      => "N"  // N
-    } mkString
+    def ReverseComplement(s: String) = s
+        .toUpperCase
+        .replace('C', 'g')
+        .replace('G', 'C')
+        .replace('A', 't')
+        .replace('T', 'A')
+        .toUpperCase() reverse
     
 }
