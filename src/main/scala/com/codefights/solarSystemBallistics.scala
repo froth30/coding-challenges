@@ -9,6 +9,24 @@ object solarSystemBallistics {
     
     import math._
     
+    val B = Map[String, Double](
+        "Su" -> 273,
+        "Me" -> 2.7,
+        "Ve" -> 7.87,
+        "Ea" -> 8.807,
+        "Ma" -> 2.711,
+        "Ju" -> 23.79,
+        "Sa" -> 9.44,
+        "Ur" -> 7.69,
+        "Ne" -> 10.15,
+        "Mo" -> .62,
+        "Pl" -> -.38,
+        "Ga" -> .428,
+        "Ca" -> .235,
+        "Io" -> .796,
+        "Eu" -> .314,
+        "Ti" -> .352)
+    
     /** Calculates where to place the ACME^TM^ air bag which will prevent
       * passengers from dying in a fiery crash.
       * <p>
@@ -40,25 +58,7 @@ object solarSystemBallistics {
       * @param v  The velocity at which the car is ejected  [m/s]
       * @return   The horizontal distance the car will travel.
       */
-    def solarSystemBallistics(b: String, a: Int, v: Int) = abs(
-        v * v * sin(a * Pi / 90) /
-            ((b take 2 match {
-                case "Su" => 273
-                case "Me" => 2.7
-                case "Ve" => 7.87
-                case "Ea" => 8.807
-                case "Ma" => 2.711
-                case "Ju" => 23.79
-                case "Sa" => 9.44
-                case "Ur" => 7.69
-                case "Ne" => 10.15
-                case "Mo" => .62
-                case "Pl" => -.38
-                case "Ga" => .428
-                case "Ca" => .235
-                case "Io" => .796
-                case "Eu" => .314
-                case "Ti" => .352
-            }) + 1))
+    def solarSystemBallistics(b: String, a: Int, v: Int) =
+        abs(v * v * sin(a * Pi/90) / (B(b take 2) + 1))
     
 }
