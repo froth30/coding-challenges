@@ -7,17 +7,11 @@ package com.codefights
   */
 object ReverseComplement {
     
-    /** Finds the complement of a given strand of DNA.
+    /** Finds the reverse complement of a given strand of DNA.
       *
-      * @param s  A strand of DNA
-      * @return   The complement of strand `s`, in reverse order.
+      * @return The complement of strand, in reverse order.
       */
-    def ReverseComplement(s: String) = s
-        .toUpperCase
-        .replace('C', 'g')
-        .replace('G', 'C')
-        .replace('A', 't')
-        .replace('T', 'A')
-        .toUpperCase() reverse
+    def ReverseComplement = (_: String)
+        .toUpperCase map ("                                                                 T G   C      N    WA  S"(_)) reverse
     
 }
