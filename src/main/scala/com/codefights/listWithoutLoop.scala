@@ -9,11 +9,8 @@ object listWithoutLoop {
     
     type A = Array[Int]
     
-    def listWithoutLoop(n: Int) = r(Array(), n)
-    
-    def r(a: A, n: Int): A = {
+    def listWithoutLoop(n: Int, a: A = Array()): A =
         if (n < 1)  (a :+ n) ++ (a reverse)
-        else        r(a:+n, n-5)
-    }
+        else        listWithoutLoop(n-5, a:+n)
     
 }
