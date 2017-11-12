@@ -7,12 +7,9 @@ package com.codefights
   */
 object listWithoutLoop {
     
-    type A = Array[Int]
-    
-    def listWithoutLoop = L(_: Int, Array())
-    
-    def L(n: Int, a: A): A =
-        if (n < 1)  (a :+ n) ++ (a reverse)
-        else        L(n-5, a:+n)
+    def listWithoutLoop(n: Int) = {
+        val r = n to -4 by -5
+        r ++ (r.reverse tail) toArray
+    }
     
 }
