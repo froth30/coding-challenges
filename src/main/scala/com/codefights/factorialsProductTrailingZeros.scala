@@ -7,8 +7,7 @@ package com.codefights
   */
 object factorialsProductTrailingZeros {
     
-    def factorialsProductTrailingZeros(l: Int, r: Int): Int = {
-        ???
-    }
+    def factorialsProductTrailingZeros(l: Int, r: Int) =
+        l to r map (x => x/5 + x/25) sum
     
 }
