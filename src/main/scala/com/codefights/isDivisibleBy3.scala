@@ -8,7 +8,13 @@ package com.codefights
 object isDivisibleBy3 {
     
     def isDivisibleBy3(s: String): Array[String] = {
-        ???
+        var a = Array[String]()
+        ('0' to '9').foreach(c => {
+            val r = s replace('*', c)
+            if (r.sum % 3 < 1) a :+= r
+        })
+        
+        a
     }
     
 }
