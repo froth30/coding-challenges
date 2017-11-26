@@ -7,8 +7,6 @@ package com.codefights
   */
 object nextVowel {
     
-    def nextVowel(v: Char): Char = {
-        ???
-    }
+    def nextVowel(v: Int) = "E   I   O     U     A" (v - 65)
     
 }
