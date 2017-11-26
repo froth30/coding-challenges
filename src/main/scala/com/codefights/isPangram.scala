@@ -7,8 +7,6 @@ package com.codefights
   */
 object isPangram {
     
-    def isPangram(s: String): Boolean = {
-        ???
-    }
+    def isPangram(s: String) = 65 to 90 forall (s.toUpperCase contains _)
     
 }
