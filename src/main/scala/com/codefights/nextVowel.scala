@@ -7,12 +7,12 @@ package com.codefights
   */
 object nextVowel {
     
-    /** Find the next vowel, given a single character.
+    /** Find the next vowel, given a single character, an English vowel
+      * satisfying the following ''guaranteed constraints:''
+      * <ul>`vowel ∈ ['A', 'E', 'I', 'O', 'U']`
       *
-      * @param v  An English vowel
-      *           <ul>''Guaranteed constraints:'' &#9 `v ∈ ['A', 'E', 'I', 'O', 'U']`
       * @return   The next English vowel, following alphabetical order.
       */
-    def nextVowel(v:Int)="                                                        E   I   O     U     A"(v-9)
+    def nextVowel = "                                                                 E   I   O     U     A" (_)
     
 }
