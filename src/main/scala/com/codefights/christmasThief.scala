@@ -20,7 +20,10 @@ object christmasThief {
     *           These are the thieves!
     */
   def christmasThief(c: Array[Array[String]]): Array[String] = {
-    ???
+    c.filter(p =>
+      ! c.exists(q => q(0) != p(0) & q(0) == p(1)) |
+        c.exists(q => q(0) != p(0) & q(1) == p(1))
+    ).map(_(0)) sorted
   }
 
 }
