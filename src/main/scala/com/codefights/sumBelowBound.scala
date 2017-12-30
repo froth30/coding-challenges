@@ -14,8 +14,6 @@ object sumBelowBound {
     *           <ul>''Guaranteed constraints:'' &#9 `1 ≤ bound ≤ 5000`
     * @return   The maximal integer `n` such that `1 + 2 + ... + n ≤ bound`.
     */
-  def sumBelowBound(b: Int): Int = {
-    (math sqrt (1 + 8 * b) - 1) / 2 toInt
-  }
+  def sumBelowBound(b: Int) = (math sqrt (1 + 8 * b) - 1) / 2 toInt
 
 }
