@@ -15,7 +15,7 @@ object sumBelowBound {
     * @return   The maximal integer `n` such that `1 + 2 + ... + n ≤ bound`.
     */
   def sumBelowBound(b: Int): Int = {
-    ???
+    (math sqrt (1 + 8 * b) - 1) / 2 toInt
   }
 
 }
