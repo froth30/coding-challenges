@@ -34,7 +34,10 @@ object hollowDiamond {
       val a = math abs n-r
       s += "  " * a
       for (c <- a to 2*n - a)
-        s += { if (c > n/2 && c < 3*n/2f && r > n/2 && r < 3*n/2f) "  " else "* " }
+        s += {
+          if (c > n/2 && c < 3*n/2f &
+              r > n/2 && r < 3*n/2f )  "  " else "* "
+        }
     }
 
     s dropRight 1
