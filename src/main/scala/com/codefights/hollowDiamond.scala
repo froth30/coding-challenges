@@ -27,8 +27,20 @@ object hollowDiamond {
     *           <ul>''Guaranteed constraints:'' &#9 `0 < n ≤ 160`
     * @return   A string representation of the ''hollow diamond'', constructed to specification.
     */
-  def hollowDiamond(n: Int): String = {
-    ???
+  def hollowDiamond(n: Int) = {
+    var s = ""
+
+    for (r <- 0 to 2*n) {
+      val a = math abs n-r
+      for (c <- 0 to 2*n - a)
+        if (c < a || c > n/2 && c < 3*n/2f
+                  && r > n/2 && r < 3*n/2f)
+          s += "  "
+        else
+          s += "* "
+    }
+
+    s stripSuffix " "
   }
 
 }
