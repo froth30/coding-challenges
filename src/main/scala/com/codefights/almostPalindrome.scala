@@ -20,6 +20,7 @@ object almostPalindrome {
     * @return   `true` if `s` is a palindrome or can be made a palindrome by swapping at most two
     *           pairs of characters; `false` otherwise.
     */
+  @Deprecated
   def almostPalindrome(s: String): Boolean = {
     ???
   }
