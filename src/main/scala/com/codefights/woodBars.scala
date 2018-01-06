@@ -7,17 +7,19 @@ package com.codefights
   */
 object woodBars {
 
-  def woodBars(b: Seq[Int]): Int =
-    try {
-      var p = b.sorted take 2
-      val d = p(1) - p(0)
-      p = Seq(p(0), p(0), d)
+  def woodBars(b: Array[Int]) = {
+    var (r, p, d) = (b, b, 8)
+    while (r.size > 1) {
+      p = r.sorted take 2
+      d = p(1) - p(0)
+
+      p = Array(p(0), p(0), d)
       if (d < 1) p = p take 1
 
-      woodBars((b drop 2) ++ p)
+      r = (r drop 2) ++ p
     }
-    catch {
-      case _ => b(0)
-    }
+
+    r(0)
+  }
 
 }
