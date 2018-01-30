@@ -7,8 +7,6 @@ package com.codefights
   */
 object iterMask {
 
-  def iterMask(n: Int): Array[Int] = {
-    ???
-  }
+  def iterMask(n: Int) = n to 0 by -1 filter (i => (n & i) == i) toArray
 
 }
