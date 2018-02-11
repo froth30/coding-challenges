@@ -8,18 +8,24 @@ package com.codefights
 object mSquare {
 
   def mSquare(n: Int): Int = {
-    if (n < 4)
-      n
-    else {
-      var r = n
-      var k = 1
-      def s = k * k
-      while (k <= n & s <= n) {
-        r = math min(r, 1 + mSquare(n - s))
-        k += 1
-      }
-      r
-    }
+    if (s(n))
+      return 1
+
+    var k = n
+    while (k % 4 < 1)
+      k >>= 2
+    if (k % 8 > 6)
+      return 4
+
+    for (i <- 1 to r(n).toInt)
+      if (s(n - i * i))
+        return 2
+
+    3
   }
+
+  def r = math sqrt _
+
+  def s = r(_: Int) % 1 == 0
 
 }
