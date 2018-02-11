@@ -7,8 +7,13 @@ package com.codefights
   */
 object mSquare {
 
-  def mSquare(n: Int): Int = {
-    ???
+  def mSquare(n: Int, c: Int = 0): Int = {
+    if (n < 4)
+      n + c
+    else
+      mSquare(n - (
+        n to 1 by -1 find (math.sqrt(_) % 1 == 0)
+        ).get, c + 1)
   }
 
 }
