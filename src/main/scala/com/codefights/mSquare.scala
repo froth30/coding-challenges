@@ -7,13 +7,19 @@ package com.codefights
   */
 object mSquare {
 
-  def mSquare(n: Int, c: Int = 0): Int = {
+  def mSquare(n: Int): Int = {
     if (n < 4)
-      n + c
-    else
-      mSquare(n - (
-        n to 1 by -1 find (math.sqrt(_) % 1 == 0)
-        ).get, c + 1)
+      n
+    else {
+      var r = n
+      var k = 1
+      def s = k * k
+      while (k <= n & s <= n) {
+        r = math min(r, 1 + mSquare(n - s))
+        k += 1
+      }
+      r
+    }
   }
 
 }
