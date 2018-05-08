@@ -7,8 +7,10 @@ package com.codefights
   */
 object nthDerivative {
 
-  def nthDerivative(c: Array[Int], n: Int, x: Int): Int = {
-    var a = c
+  val m = 1000000007
+
+  def nthDerivative(c: Array[Int], n: Int, x: Int) = {
+    var a = c map (BigInt(_))
     def p = a indices
 
     for (_ <- 1 to n) {
@@ -17,7 +19,12 @@ object nthDerivative {
         a = d.tail toArray
     }
 
-    p.map(i => a(i) * math.pow(x, i)).sum toInt
+    val r = p.map(i => a(i) * BigInt(math.pow(x,i).toInt) % m).sum.toInt % m
+
+    if (r < 0)
+      r + m
+    else
+      r
   }
 
 }
