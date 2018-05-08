@@ -8,15 +8,16 @@ package com.codefights
 object nthDerivative {
 
   def nthDerivative(c: Array[Int], n: Int, x: Int): Int = {
-    if (n < 1)
-      c.indices.map(i => c(i) * math.pow(x, i)).sum toInt
-    else {
-      val d = c.indices.map(i => c(i) * i)
-      if (d isEmpty)
-        0
-      else
-        nthDerivative(d.tail toArray, n - 1, x)
+    var a = c
+    def p = a indices
+
+    for (_ <- 1 to n) {
+      val d = p map (i => a(i) * i)
+      if (d nonEmpty)
+        a = d.tail toArray
     }
+
+    p.map(i => a(i) * math.pow(x, i)).sum toInt
   }
 
 }
