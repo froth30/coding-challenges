@@ -15,21 +15,11 @@ object textDisplay {
     def R = i = Set(i+1, s size) min
 
     def y = s splitAt i
-
-    def t(c: Int) = {
-      val (a,b) = y
-      s = a + Map(
-        93  -> ";",
-        94  -> ",",
-        95  -> ".",
-        111 -> "'"
-      ).getOrElse(c/2, c.asInstanceOf[Char] toLower) + b
-      R
-    }
+    def a = y _1
+    def b = y _2
 
     k foreach {
       case 8 =>
-        val (a,b) = y
         s = a.dropRight(1) + b
         L
       case 35 => i = s size
@@ -37,9 +27,10 @@ object textDisplay {
       case 37 => L
       case 39 => R
       case 46 =>
-        val (a,b) = y
         s = a + b.drop(1)
-      case c => t(c)
+      case c =>
+        s = a + "                                                0123456789       abcdefghijklmnopqrstuvwxyz                                                                                               ; , .                               '"(c) + b
+        R
     }
 
     s
