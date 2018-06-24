@@ -17,7 +17,7 @@ object alternatingKeys {
       n * 50
 
     else {
-      val p = s.prefixLength(_ < 33) - 1
+      val p = s prefixLength (_ < 33)
 
       p * 50 +
         (p to n).map(i => {
