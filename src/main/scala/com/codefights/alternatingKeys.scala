@@ -14,25 +14,25 @@ object alternatingKeys {
     val s = (0 + t map (S(_))) toArray
 
     if (n < 2)
-      n * 50
+      n * 2
 
     else {
       val p = s prefixLength (_ < 33)
 
-      p * 50 +
+      p * 2 - 2 +
         (p to n).map(i => {
           (s(i-1), s(i)) match {
             case (_, 32) =>
               s(i) = S(s(i-1))
-              50
+              2
             case (a, b) =>
               if (a == b)
-                75
+                3
               else
-                50
+                2
           }
         }).sum
     }
-  }
+  } * 25
 
 }
