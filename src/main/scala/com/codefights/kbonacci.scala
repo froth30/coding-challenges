@@ -7,8 +7,13 @@ package com.codefights
   */
 object kbonacci {
 
-  def kbonacci(k: Int, n: Int): String = {
-    ???
+  def kbonacci(k: Int, n: Int) = {
+    val a = Array.fill(n+1)(1)
+
+    for (i <- k to n)
+      a(i) = a.slice(i-k,i) sum
+
+    a(n) + ""
   }
 
 }
