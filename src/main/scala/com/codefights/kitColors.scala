@@ -7,16 +7,18 @@ package com.codefights
   */
 object kitColors {
 
-  def p(c: String, i: Int) = Integer parseInt (c.slice(i, i+2), 16)
+  type A = Array[String]
 
-  def kitColors(a: Array[String], b: Array[String]): Array[Array[String]] = {
-    val d = a.map(a => b.map(b => {
-      def c(i: Int) = (p(a,i) - p(b,i)) abs
+  def p(c: String, i: Int) = Integer parseInt(c slice(i, i+2), 16)
 
-      c(1) + c(3) + c(5)
-    }))
+  def kitColors(a: A, b: A) = {
+    val d = a map (a => b map (b => Seq(1,3,5).map(i => (p(a,i) - p(b,i)).abs) sum))
+    val m = (d map (_ max)) max
 
-    ???
+    (for { i <- a indices
+
+           j <- b indices if d(i)(j) == m
+    } yield Array(a(i), b(j))) toArray
   }
 
 }
