@@ -17,7 +17,9 @@ object kitColors {
 
     (for { i <- a indices
 
-           j <- b indices if d(i)(j) == m
+           j <- b indices
+
+           if d(i)(j) == m
     } yield Array(a(i), b(j))) toArray
   }
 
