@@ -6,6 +6,7 @@ package com.codefights
   * @since Aug 13, 2017
   * @author froth30
   */
+//noinspection DangerousCatchAll
 object chainReaction2 {
     
     import math.abs
