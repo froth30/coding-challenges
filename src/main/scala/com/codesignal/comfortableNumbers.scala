@@ -16,8 +16,10 @@ object comfortableNumbers {
     p
   }
 
-  def c(a: Int, b: Int) = b >= a - s(a) & b <= a + s(a)
+  def c(a: Int, b: Int) = {
+    val s = a + "" map (_ - 48) sum
 
-  def s(x: Int) = (x + "").map(_ asDigit) sum
+    b >= a - s & b <= a + s
+  }
 
 }
