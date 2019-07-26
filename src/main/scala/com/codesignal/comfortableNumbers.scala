@@ -7,14 +7,8 @@ package com.codesignal
   */
 object comfortableNumbers {
 
-  def comfortableNumbers(l: Int, r: Int) = {
-    var p = 0
-    for (a <- l to r-1; b <- a+1 to r)
-      if (c(a, b) & c(b, a))
-        p += 1
-
-    p
-  }
+  def comfortableNumbers(l: Int, r: Int) =
+    l to r map (a => a+1 to r count (b => c(a,b) & c(b,a))) sum
 
   def c(a: Int, b: Int) = {
     val s = a + "" map (_ - 48) sum
