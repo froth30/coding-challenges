@@ -7,6 +7,16 @@ package com.codefights
   */
 object iterMask {
 
-  def iterMask(n: Int) = n to 0 by -1 filter (i => (n & i) == i) toArray
+  def r(n: Int, k: Int): Seq[Int] =
+    if (n == 0)
+      Seq(0)
+    else if ((1 << k & n) < 1)
+      r(n, k - 1)
+    else {
+      val t = r(n & ~(1 << k), k - 1)
+      t.map(1 << k | _) ++ t
+    }
+
+  def iterMask(n: Int) = r(n, 31) toArray
 
 }
