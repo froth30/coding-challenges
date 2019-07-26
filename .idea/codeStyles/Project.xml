@@ -2,5 +2,8 @@
   <code_scheme name="Project" version="173">
     <option name="RIGHT_MARGIN" value="100" />
     <option name="SOFT_MARGINS" value="80,120" />
+    <ScalaCodeStyleSettings>
+      <option name="USE_SCALADOC2_FORMATTING" value="true" />
+    </ScalaCodeStyleSettings>
   </code_scheme>
 </component>
