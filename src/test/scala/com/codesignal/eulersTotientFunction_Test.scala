@@ -18,7 +18,7 @@ class eulersTotientFunction_Test {
     val output = eulersTotientFunction(input)
     
     println()
-    println(s"Input:              in: $input")
+    println(s"Input:              n: $input")
     println(s"Output:             $output")
     println(s"Expected Output:    $expectedOutput")
     
