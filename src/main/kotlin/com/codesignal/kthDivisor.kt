@@ -1,3 +1,5 @@
+package com.codesignal
+
 fun kthDivisor(n: Int, k: Int): Int {
     val d = (1..n).filter { n % it < 1 }
 

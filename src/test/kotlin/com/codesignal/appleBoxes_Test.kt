@@ -1,3 +1,5 @@
+package com.codesignal
+
 import org.junit.Test
 
 class appleBoxes_Test() {

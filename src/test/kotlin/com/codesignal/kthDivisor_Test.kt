@@ -1,3 +1,5 @@
+package com.codesignal
+
 import org.junit.Test
 
 class kthDivisor_Test() {
