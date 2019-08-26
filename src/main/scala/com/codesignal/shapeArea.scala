@@ -8,6 +8,6 @@ package com.codesignal
 object shapeArea {
 
   def shapeArea(n: Int) =
-    n * n * 2 - n * 2 + 1
+    (n - 1) * n * 2 + 1
 
 }
