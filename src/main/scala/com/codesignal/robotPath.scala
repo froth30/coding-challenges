@@ -9,11 +9,9 @@ object robotPath {
 
   def robotPath(s: String, b: Int) = {
     var (x, y) = (0, 0)
-    for (i <- s)
-           if (i < 69)  y = y - 1 max -b  // D
-      else if (i > 84)  y = y + 1 min  b  // U
-      else if (i < 77)  x = x - 1 max -b  // L
-      else              x = x + 1 min  b  // R
+    for (c <- s)
+      if (c % 6 > 3)  x = x + c %  4 - 1 min b max -b  // L or R
+      else            y = y + c % 15 - 9 min b max -b  // U or D
 
     Array(x, y)
   }
