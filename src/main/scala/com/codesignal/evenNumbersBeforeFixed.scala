@@ -7,16 +7,7 @@ package com.codesignal
   */
 object evenNumbersBeforeFixed {
 
-  def evenNumbersBeforeFixed(s: Seq[Int], f: Int) = {
-    var n = 0
-    if (s exists (e => {
-      if (e % 2 < 1 & e != f)
-        n += 1
-      e == f
-    }))
-      n
-    else
-      -1
-  }
+  def evenNumbersBeforeFixed(s: Seq[Int], f: Int) =
+    s filter (i => i % 2 < 1 | i == f) indexOf f
 
 }
