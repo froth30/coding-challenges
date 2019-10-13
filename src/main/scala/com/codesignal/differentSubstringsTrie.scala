@@ -8,7 +8,6 @@ package com.codesignal
 object differentSubstringsTrie {
 
   def differentSubstringsTrie(s: String) =
-    1 to s.size map (n =>
-      (s sliding n toSeq).distinct size) sum
+    1 to s.size flatMap (s sliding _ toSet) size
 
 }
