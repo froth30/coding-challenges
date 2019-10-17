@@ -8,16 +8,19 @@ package com.codesignal
 object primeFactors2 {
 
   def primeFactors2(n: Int) = {
-    var k, f = n
-    var s = Set[Int]()
+    var k = n
+    var r, f = 1
+    var s = Set(0) - 0
 
     while (k > 1) {
-      f = 2 to k find (f =>
-        !(2 to f-1 exists (f % _ < 1))
-          & k % f < 1) get
+      r = math sqrt k toInt
+
+      f = f+1 to r find (k % _ < 1) getOrElse k
+
+      while (k % f < 1)
+        k /= f
 
       s += f
-      k /= f
     }
 
     s toArray
