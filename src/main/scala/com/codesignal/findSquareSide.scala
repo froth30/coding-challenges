@@ -7,9 +7,11 @@ package com.codesignal
   */
 object findSquareSide {
 
-  def s = math pow (_: Double, 2) toInt
+  type V = Seq[Int]
 
-  def findSquareSide(x: Seq[Int], y: Seq[Int]) =
+  def s(n: Int) = n * n
+
+  def findSquareSide(x: V, y: V) =
     1 to 3 map (i => s(x(i) - x(0)) + s(y(i) - y(0))) min
 
 }
