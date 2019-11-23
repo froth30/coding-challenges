@@ -8,7 +8,7 @@ package com.codesignal
 object avoidObstacles {
 
   def avoidObstacles(o: Seq[Int]) =
-    2 to 9999 find { j =>
+    2 to 'ϩ' find { j =>
       o forall (_ % j > 0)
     }
 
